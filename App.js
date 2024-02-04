@@ -1,23 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, View } from 'react-native';
+import Home from './src/screens/Home';
+import React from 'react';
 
-export default function App() {
+const App = () => {
+  const screenWidth = Dimensions.get('window').width;
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hola Coder!</Text>
-      <StatusBar style="auto" />
+      <Home screenWidth={screenWidth} />
     </View>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#111',
+    paddingTop: 30,
+    backgroundColor: 'black',
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    color: '#fff',
   },
 });
